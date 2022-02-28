@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>S12ProjectAppRails5</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <%= render 'layouts/navbar'%>
+
+  <% flash.each do |key, message| %>
+    <div class="container">
+      <div class="row sign-up-form">
+        <div class="col s12 m12 l12">
+          <div class="card-panel green lighten-2" id="fade-out">
+            <span class="white-text">
+              <%= message %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <main>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </main>  
+  <%= render 'layouts/footer'%>
+  </body>
+</html>
